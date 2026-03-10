@@ -40,6 +40,7 @@ French, mini size, inserted into a specific element:
 <div id="my-banner"></div>
 <script src="/banner.js?lang=fr&size=mini&id=my-banner"></script>
 
+---
 
 Link to a custom page, no close button:
 
@@ -49,6 +50,8 @@ Link to a custom page, no close button:
 
 <div id="my-banner-custom"></div>
 <script src="/banner.js?link=https://example.com/android&hidebutton=off&size=mini&id=my-banner-custom"></script>
+
+---
 
 Minimal size without animations.
 
