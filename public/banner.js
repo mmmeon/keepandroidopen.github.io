@@ -207,8 +207,8 @@
     "}" +
     ".kao-banner-close:hover{opacity:1;}";
 
-	var cssKaoPulse =
-    ".kao-banner { animation:kao-pulse 2s infinite; }" +
+  var cssKaoPulse =
+    ".kao-banner:not(.no-animation) { animation:kao-pulse 2s infinite; }" +
     "@keyframes kao-pulse{" +
       "0%{box-shadow:0 0 0 0 rgba(211,47,47,0.7)}" +
       "70%{box-shadow:0 0 0 15px rgba(211,47,47,0)}" +
@@ -217,8 +217,8 @@
 
   var style = document.createElement("style");
   style.textContent = (size === "mini" ? cssMini : size === "minimal" ? cssMinimal : cssNormal)
-		+ (params.animation === "off" ? "" : cssKaoPulse)
-		+ cssCommon;
+    + (params.animation === "off" ? "" : cssKaoPulse)
+    + cssCommon;
   document.head.appendChild(style);
 
   // ── Check if previously dismissed (reappears after dismissDays) ─────
@@ -235,7 +235,7 @@
 
   // ── Create banner DOM ─────────────────────────────────────────────────
   var banner = document.createElement("div");
-  banner.className = "kao-banner";
+  banner.className = params.animation === "off" ? "kao-banner no-animation" : "kao-banner";
 
   var messageText = messages[locale] || messages.en;
 
